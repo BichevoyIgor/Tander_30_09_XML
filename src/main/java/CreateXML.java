@@ -50,6 +50,7 @@ public class CreateXML {
         try {
             StreamSource xslStream = new StreamSource(inputXSL); //шаблон построения XML step2
             TransformerFactory factory = TransformerFactory.newInstance();
+            factory.setAttribute("indent-number", new Integer(2)); //отступ тэгов
             transformer = factory.newTransformer(xslStream); // //шаблон построения XML step3
            // transformer = factory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes"); // перенос
